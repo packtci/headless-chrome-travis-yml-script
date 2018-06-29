@@ -62,3 +62,6 @@ typings/
 
 # png file
 blog.png
+
+# vscode folder
+.vscode

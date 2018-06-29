@@ -30,4 +30,10 @@ describe("Marcel Belmont Blog", () => {
     const textContent = await page.evaluate(() => document.querySelector("#biography").textContent);
     expect(textContent).toEqual("Biography");
   });
+
+  it("Should have an interests section", async () => {
+    await page.goto(webpage);
+    const testContent = await page.evaluate(() => document.querySelector(".ul-interests").children[1].textContent)
+    expect(testContent).toEqual("Testing");
+  });
 });
