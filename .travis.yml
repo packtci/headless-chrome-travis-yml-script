@@ -3,6 +3,10 @@ language: node_js
 node_js:
     - "8.11"
 
+env:
+  global:
+    secure: WLiuzi0CTx/ta5zuoU5K2LeZgzrAhWATUjngx++Azz7Tw4+XqbxeHZ/6ITymE1YLDRMxdIh8hItvkoNCbPmJ6q1To6bdirloWZq2rlZ5BPGYfVY3cuoUuxTAz1uhhfnngkqd76eJfB4lBUfOIVNAg2rpI7QFAQr1aiIKxjthiTms57fR4dusEi/efVO90I7yzFtyxEa0tLTgW9x+dPSt2ApmJ0EP9tftk7M7Uw/F2Gm1/AzWpM1Blklm/iEHF3ZY6Ij/V+ZG2SCpfrF88m50a8nJF1a+KttZz/TTbwqA58dXNokxcD30HB468/oaGMTJxYLFmG3QMfbXuP2wUkuinIEWQxGBEDh3uw11ZhypCGVNvE6vbRpdIIzywcVcX95G1px+Dgcil+c8AebO1wbWlDXMuWNQHC7JjdQspvLUtsLeyyei3LKshTY7LktvhJEG/+sgd5sejeqnzFmLmC9TdbCazLMFWzqhl+SBcmQtFNVuqAGBlMFlT1l54zFnZl7mixetVeBziuS7xGG3XXm0BsYIQnkcJYxNGv8JrFMSoqBTdQV4C20UyyXAw8s+5lu6dGziiMPSUK4KUSVPJ3hyeNiGhLTBsJn4bnTPiJ5ilVdyNM8RD8X2EJRImT3uvGvuFqHraCBrBuZVaW4RtbGX0JYYtMMMr/P84jKrNC3iFD8=
+
 dist: trusty
 
 sudo: false
@@ -11,6 +15,7 @@ addons:
   chrome: stable
 
 before_install:
+  - openssl aes-256-cbc -K $encrypted_74945c17fbe2_key -iv $encrypted_74945c17fbe2_iv -in secret.txt.enc -out secret.txt -d
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
 cache:

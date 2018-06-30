@@ -65,3 +65,6 @@ blog.png
 
 # vscode folder
 .vscode
+
+# secret file
+secret.txt
